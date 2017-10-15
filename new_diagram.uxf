@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>500</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::User
+--
+-userId: Integer
+-username: String
+-password: String
+-telephone: String
+-accountId: int
+-trades = new LinkedHashSet&lt;Trade&gt;(): Set&lt;Trade&gt;
+--
++User(Integer userId, String username, int accountId): ctor
++User(String username, String password, String telephone, int accountId): ctor
++User(): ctor
++setTrades(Set&lt;Trade&gt; trades): void
++getTrades(): Set&lt;Trade&gt;
++getUserId(): Integer
++setUserId(Integer userId): void
++getUsername(): String
++setUsername(String username): void
++getAccountId(): Integer
++setAccountId(Integer accountId): void
++toString(): String
++getPassword(): String
++setPassword(String password): void
++getTelephone(): String
++setTelephone(String telephone): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>0</y>
+      <w>270</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::Food
+--
+-id: Integer
+-title: String
+-price: float
+-salesAmount: int
+-storeNumber: int
+-remark: String
+--
++getId(): Integer
++setId(Integer id): void
++getTitle(): String
++setTitle(String title): void
++getPrice(): float
++setPrice(float price): void
++getSalesAmount(): int
++setSalesAmount(int salesAmount): void
++getStoreNumber(): int
++setStoreNumber(int storeNumber): void
++getRemark(): String
++setRemark(String remark): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>0</y>
+      <w>520</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::TradeItem
+--
+-tradeItemId: Integer
+-food: Food
+-quantity: int
+-foodId: Integer
+-tradeId: Integer
+--
++TradeItem(Integer tradeItemId, Integer foodId, int quantity, Integer tradeId): ctor
++TradeItem(): ctor
++setFood(Food food): void
++getFood(): Food
++getTradeItemId(): Integer
++setTradeItemId(Integer tradeItemId): void
++getFoodId(): Integer
++setFoodId(Integer foodId): void
++getQuantity(): int
++setQuantity(int quantity): void
++getTradeId(): Integer
++setTradeId(Integer tradeId): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>440</y>
+      <w>390</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::Trade
+--
+-tradeId: Integer
+-tradeTime: Date
+-items = new LinkedHashSet&lt;TradeItem&gt;(): Set&lt;TradeItem&gt;
+-userId: Integer
+--
++setItems(Set&lt;TradeItem&gt; items): void
++getItems(): Set&lt;TradeItem&gt;
++getTradeId(): Integer
++setTradeId(Integer tradeId): void
++getUserId(): Integer
++setUserId(Integer userId): void
++getTradeTime(): Date
++setTradeTime(Date tradeTime): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>440</y>
+      <w>390</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::ShoppingCart
+--
+-foods = new HashMap(): Map&lt;Integer, ShoppingCartItem&gt;
+--
++updateItemQuantity(Integer id, int quantity): void
++removeItem(Integer id): void
++clear(): void
++isEmpty(): boolean
++getTotalMoney(): float
++getItems(): Collection&lt;ShoppingCartItem&gt;
++getFoodNumber(): int
++getFoods(): Map&lt;Integer, ShoppingCartItem&gt;
++hasFood(Integer id): boolean
++addFood(Food food): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>440</y>
+      <w>300</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::Account
+--
+-accountId: Integer
+-balance: int
+--
++Account(Integer accountId, int balance): ctor
++Account(): ctor
++getAccountId(): Integer
++setAccountId(Integer accountId): void
++getBalance(): int
++setBalance(int balance): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>730</y>
+      <w>320</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>me.only1jia.foodstore.domain::ShoppingCartItem
+--
+-food: Food
+-quantity: int
+--
++ShoppingCartItem(Food food): ctor
++getFood(): Food
++getQuantity(): int
++setQuantity(int quantity): void
++getItemMoney(): float
++increment(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
